@@ -1,0 +1,140 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: {country}-{service}",
+ "creation": "2022-09-18 20:30:22.043756",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "country",
+  "service",
+  "service_category",
+  "local_name",
+  "section_break_5",
+  "steps",
+  "section_break_7",
+  "service_description",
+  "due_date",
+  "auto_repeat",
+  "freequency",
+  "no_of_days",
+  "no_of_months",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "description": "(This is the expat assignment related activity/\ncompliance that is generally performed in the\nselected country)",
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Service",
+   "options": "Service",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "service.service_category",
+   "fieldname": "service_category",
+   "fieldtype": "Link",
+   "label": "Service Category",
+   "options": "Service Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "local_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Local Name"
+  },
+  {
+   "fieldname": "service_description",
+   "fieldtype": "Small Text",
+   "label": "Service Description"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_repeat",
+   "fieldtype": "Check",
+   "label": "Auto repeat"
+  },
+  {
+   "fieldname": "freequency",
+   "fieldtype": "Select",
+   "label": "freequency",
+   "options": "Annual\nQuarterly\nMonthly\nHalf yearly\nWeekly\nOne time\nCustom"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Country Service",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: doc.freequency == 'Custom'",
+   "fieldname": "no_of_days",
+   "fieldtype": "Int",
+   "label": "No of Days"
+  },
+  {
+   "depends_on": "eval: doc.freequency == 'Custom'",
+   "fieldname": "no_of_months",
+   "fieldtype": "Int",
+   "label": "No of Months"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "steps",
+   "fieldtype": "Table",
+   "label": "steps",
+   "options": "Country Service detail"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-09-18 20:57:51.095612",
+ "modified_by": "Administrator",
+ "module": "Expat Orbit",
+ "name": "Country Service",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
