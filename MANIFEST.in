@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include expat_orbit *.css
+recursive-include expat_orbit *.csv
+recursive-include expat_orbit *.html
+recursive-include expat_orbit *.ico
+recursive-include expat_orbit *.js
+recursive-include expat_orbit *.json
+recursive-include expat_orbit *.md
+recursive-include expat_orbit *.png
+recursive-include expat_orbit *.py
+recursive-include expat_orbit *.svg
+recursive-include expat_orbit *.txt
+recursive-exclude expat_orbit *.pyc
