@@ -1,6 +1,6 @@
 ## Expat Orbit
 
-App to manager country services
+App to manage country services
 
 #### License
 
